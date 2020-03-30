@@ -24,6 +24,14 @@ import org.testng.Reporter;
 
 public class Helper {
 
+	
+	public void gitMethod()
+	{
+		System.out.println("Github");
+	}
+	
+	
+	
 	// This method can be used for calendar, autosuggestion, webtable and any scenario where multiple option are present.
 	public static void waitForSuggestionAndSelect(WebDriver driver,By locator,String text,String stepInfo)
 	{
