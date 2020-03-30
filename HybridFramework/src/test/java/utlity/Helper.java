@@ -24,11 +24,6 @@ import org.testng.Reporter;
 
 public class Helper {
 
-	
-	
-	
-	
-	
 	public static void waitForSuggestionAndSelect(WebDriver driver,By locator,String text,String stepInfo)
 	{
 		WebDriverWait wait=new WebDriverWait(driver, 30);
