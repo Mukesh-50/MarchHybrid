@@ -11,6 +11,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -18,7 +19,6 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import factory.BrowserFactory;
-import factory.DataProviderFactory;
 import utlity.Helper;
 
 /**
@@ -56,11 +56,14 @@ public class BaseClass {
 
 	}
 	
+	@Parameters({"browser","appurl"})
 	@BeforeClass
-	public void startBrowserSession()
+	public void startBrowserSession(String browser,String url)
 	{
 		System.out.println("LOG:INFO : Setting up browser session");
-		driver=new BrowserFactory().startBrowser(DataProviderFactory.getConfig().getBrowser(),DataProviderFactory.getConfig().stagingURL());
+		//driver=new BrowserFactory().startBrowser(DataProviderFactory.getConfig().getBrowser(),DataProviderFactory.getConfig().stagingURL());
+		driver=new BrowserFactory().startBrowser(browser,url);
+
 		//System.out.println("Driver value "+driver);
 	}
 	
